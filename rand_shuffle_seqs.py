@@ -8,11 +8,16 @@
 # example of how to read a gzip file
 import gzip
 import random
+import string
 
 # here is an example of how to take a list and extract a random set of values
-example_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+# you can comment out this code after you understand it
+# and see how you can do this same approach for a file of sequences
+example_list = list(string.ascii_lowercase)
 
-shuffled_list = random.shuffle(example_list)
 fifty_percent = int(0.5 * len(example_list))
-for i in range(fifty_percent):
-  print(shuffled_list[i])
+shuffled_list = random.sample(example_list,fifty_percent)
+print(shuffled_list)
+
+for i in shuffled_list:
+  print(i)
